@@ -3,7 +3,7 @@ create table course (
     course_name Varchar(20) not null
     dept_name varchar(20) not null
     credits int not null
-    timeslot int not null
+    hour int not null
     max_seats int not null
 );
 
@@ -14,5 +14,21 @@ create table teacher (
 );
 
 create table university (
-    
+    semester int not null
+    year int not null
+    primary key (semester, year);
+)
+
+create table time (
+    hour int primary key
+    start_time int not null
+    end_time int not null
+)
+
+create table student (
+    student_id varchar(8) primary key
+    name varchar(100) not null
+    email_id varchar(40) not null
+    dept_name varchar(20) not null
+    units int null
 )
